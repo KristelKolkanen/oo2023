@@ -26,8 +26,17 @@ public class Main {
         int birthY = getYourAge(1998);
         int until100 = 100 - birthY;
         int days100 = until100*365;
-        System.out.println(birthY);
+        System.out.println("Vanus: " + birthY);
         System.out.println("Elupäevi järgi: " + days100);
+
+        // double funktsioon
+        double balance = getBalance(289);
+        System.out.println("Vaba raha: " + balance);
+    }
+    private static double getBalance(int debt) {
+        double cash = 148.5;
+        double card = 1037.73;
+        return (cash + card) - (debt + debt*0.3);
     }
     private static int getYourAge(int birthYear) {
         LocalDate localDate = LocalDate.now();
@@ -48,7 +57,6 @@ public class Main {
             System.out.println("Õige vastus!");
         }
     }
-
     private static void guessingGame2(int computerNr, int playerNr2) {
         if (computerNr > playerNr2) {
             System.out.println("Arvuti arv on suurem, u lose");
@@ -58,7 +66,6 @@ public class Main {
             System.out.println("Joppas - õige vastus!");
         }
     }
-
     private static void moneyResult(double c) {
         if (c == 0) {
             System.out.println("Maksti täpne summa");
