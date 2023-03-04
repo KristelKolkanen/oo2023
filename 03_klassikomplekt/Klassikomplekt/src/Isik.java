@@ -1,5 +1,5 @@
 public class Isik {
-    KontaktAndmed kontaktAndmed;
+    Kontaktandmed kontaktAndmed;
     String isikukood;
     String eesnimi;
     String perenimi;
