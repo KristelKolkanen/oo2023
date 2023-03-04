@@ -3,6 +3,7 @@ public class Player {
     int Ycoordinate;
     char symbol;
     Direction direction;
+    Item item; //klassikomplekt Player klassi sees on Item klass
 
     // constructor
     public Player(int worldWidth, int worldHeight) {

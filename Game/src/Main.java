@@ -24,6 +24,7 @@ public class Main {
         List<Item> items = new ArrayList<>(Arrays.asList(sword, hammer, boot));
 
         //Item[] items1 = {sword, hammer, boot};
+        // Array -> ei ole muudetav (read-only)
 
         world.printMap(world.width, world.height,
                 player.Xcoordinate, player.Ycoordinate, player.symbol,
@@ -38,6 +39,14 @@ public class Main {
                     dragon.Xcoordinate, dragon.Ycoordinate, dragon.symbol,
                     orc.Xcoordinate, orc.Ycoordinate, orc.symbol, items);
             System.out.println();
+            for (Item i : items) {
+                if (i.Xcoordinate == player.Xcoordinate && i.Ycoordinate == player.Ycoordinate) {
+                    player.item = i;
+                    System.out.println("Korjasid eseme: " + player.item.name);
+                    break;
+                }
+            }
+            }
             input = scanner.nextLine();
         }
     }
