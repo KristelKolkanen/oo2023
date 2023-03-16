@@ -1,0 +1,3 @@
+mingi suvaline tekst
+vaja kirjutada kontrolltöö jaoks
+midagi tarka ei oska prg öelda
