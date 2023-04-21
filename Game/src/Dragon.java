@@ -1,15 +1,8 @@
-public class Dragon {
-    int Xcoordinate;
-    int Ycoordinate;
-    char symbol;
+public class Dragon extends Character {
 
     public Dragon(int worldWidth, int worldHeight) {
-        this.Xcoordinate = getRandomCoordinate(worldWidth);
-        this.Ycoordinate = getRandomCoordinate(worldHeight);
-        this.symbol = 'D';
+        // super on parenti constructor
+        super(worldWidth, worldHeight, 'D');
     }
 
-    private static int getRandomCoordinate(int worldDimension) {
-        return (int) (Math.random() * (worldDimension - 2) + 1);
-    }
 }
