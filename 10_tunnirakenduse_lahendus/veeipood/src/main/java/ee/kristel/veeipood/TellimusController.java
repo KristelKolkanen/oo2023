@@ -1,5 +1,6 @@
 package ee.kristel.veeipood;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -37,13 +38,48 @@ public class TellimusController {
         tellimused.remove(index);
         return "Tellimus kustutatud!";
     }
+
+    @Autowired
+    ToodeController toodeController;
+    @Autowired
+    IsikController isikController;
     // POST localhost:8080/lisa-tellimus
     @PostMapping("lisa-tellimus")
-    public List<Tellimus> lisaToode(
+    public List<Tellimus> lisaTellimus(
             @RequestParam int id,
-            @RequestParam String nimi,
-            @RequestParam double hind) {
-//        tellimused.add(new Tellimus(id, nimi, hind));
+            @RequestParam int tellijaIndex,
+            @RequestParam int tooteIndex) {
+        Isik tellija = isikController.isikud.get(tellijaIndex);
+
+        Toode tellitudToode = toodeController.tooted.get(tooteIndex);
+        List<Toode> tellitudTooted = new ArrayList<>(Arrays.asList(tellitudToode));
+
+        tellimused.add(new Tellimus(id, tellija, tellitudTooted));
         return tellimused;
     }
+
+    @PostMapping("lisa-tellimus2")
+    public List<Tellimus> lisaTellimus2(
+            @RequestParam int id,
+            @RequestParam int tellijaIndex,
+            @RequestParam int[] tooteIndexid) {
+        Isik tellija = isikController.isikud.get(tellijaIndex);
+
+        List<Toode> tellitudTooted = new ArrayList<>();
+        for(int i: tooteIndexid){
+            Toode toode = toodeController.tooted.get(i);
+            tellitudTooted.add(toode);
+        }
+
+        tellimused.add(new Tellimus(id, tellija, tellitudTooted));
+        return tellimused;
+    }
+
+    @PostMapping("lisa-tellimus3")
+    public List<Tellimus> lisaTellimus3(
+            @RequestBody Tellimus tellimus) {
+        tellimused.add(tellimus);
+        return tellimused;
+    }
+
 }
