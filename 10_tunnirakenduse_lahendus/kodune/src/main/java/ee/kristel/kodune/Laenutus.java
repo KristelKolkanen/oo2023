@@ -1,5 +1,4 @@
-package ee.kristel.veeipood;
-
+package ee.kristel.kodune;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,10 +8,10 @@ import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class Tellimus {
+@NoArgsConstructor
+public class Laenutus {
     private int id;
-    private Isik tellija;
-    private List<Toode> tooted;
+    private Kasutaja laenutaja;
+    private List<Raamat> raamatud;
 }

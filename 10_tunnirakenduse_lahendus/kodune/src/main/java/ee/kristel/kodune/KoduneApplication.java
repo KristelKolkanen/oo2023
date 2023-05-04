@@ -1,13 +1,13 @@
-package ee.kristel.veeipood;
+package ee.kristel.kodune;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class VeeipoodApplication {
+public class KoduneApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(VeeipoodApplication.class, args);
+        SpringApplication.run(KoduneApplication.class, args);
     }
 
 }

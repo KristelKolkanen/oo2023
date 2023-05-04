@@ -1,18 +1,17 @@
-package ee.kristel.veeipood;
-
+package ee.kristel.kodune;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.Date;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Tellimus {
+public class Kasutaja {
     private int id;
-    private Isik tellija;
-    private List<Toode> tooted;
+    private int kood;
+    private Date registreerunud;
 }
