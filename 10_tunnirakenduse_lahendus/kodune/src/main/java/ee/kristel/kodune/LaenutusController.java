@@ -38,4 +38,9 @@ public class LaenutusController {
         laenutused.add(new Laenutus(id, laenutaja, laenatudRaamatud));
         return laenutused;
     }
+
+    @GetMapping("laenutused")
+    public List<Laenutus> saaLaenutused(){
+        return laenutused;
+    }
 }
